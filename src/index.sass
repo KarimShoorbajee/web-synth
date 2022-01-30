@@ -1,13 +1,30 @@
-.Keys 
+$keyboard-width: 30vw
+$white-key-width: $keyboard-width/7
+$black-key-width: $white-key-width*.55
+$key-boarder-width: .1vw
+$piano-height: 100px
+$black-key-height: $piano-height*.7
+
+body
+    height: 100%
     display: flex
-    flex-direction: row
-    color: red
+    margin: auto
+    justify-content: center
+    align-items: center
 
-.White
-    min-width: 30px
-    min-height: 10px
-    background-color: red
-
-.Black
-    min-width: 30px
-    background-color: black
+.key
+    border: solid gray $key-boarder-width
+    float: left
+    position: relative
+    height: 50px
+.a, .b, .d, .e, .g, .black
+    margin: 0 0 0 (-($black-key-width / 2) - $key-boarder-width)
+.white
+    z-index: 1
+    width: $white-key-width
+    height: $piano-height
+.black
+    z-index: 2
+    background-color: black 
+    width: $black-key-width
+    height: $black-key-height
